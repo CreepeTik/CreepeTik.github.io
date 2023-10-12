@@ -1,0 +1,21 @@
+#videoContainer {
+    display: none;
+  }
+  
+  #playButton {
+    display: block;
+  }
+
+.videoClass {
+  height: 100%;
+  width: 100%;
+}
+
+.buttonClass {
+  margin-top: 100px;
+  height: 300px;
+  width: 100%;
+  font-size: 80px;
+  background-color: rgb(43, 0, 235);
+  border-radius: 15px;
+}
