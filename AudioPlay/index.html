@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      #audioInput {
+        margin-bottom: 20px;
+      }
+      #speedRange {
+        width: 100%;
+      }
+      #audioBlock {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Audio Play</h2>
+    <input id="audioInput" type="file" onchange="start()" accept="audio/*">
+    <div id="audioBlock">
+      <h4 style="font-family: Arial;">Speed</h4>
+      <input id="speedRange" type="range" min="0.1" max="10" step="0.1" value="1" onchange="changeSpeed()">
+      <h5 id="speedDisplay"></h5>
+      <audio id="music" loop controls></audio>
+    </div>
+    <h5>Warning: audio will automatically play after import!</h5>
+    <script>
+    const audioInput = document.getElementById("audioInput");
+    const music = document.getElementById("music");
+    const speedRange = document.getElementById("speedRange");
+    const audioBlock = document.getElementById("audioBlock");
+    const speedDisplay = document.getElementById("speedDisplay");
+     function start() {
+       if (audioInput.files.length > 0) {
+         music.src = URL.createObjectURL(audioInput.files[0]);
+         speedRange.value = 1;
+         speedDisplay.innerHTML = music.playbackRate
+         audioBlock.style.display = "block";
+         music.play();
+       } else {
+         music.src = "";
+         audioBlock.style.display = "none";
+         speedRange.value = 1;
+       }
+     }
+     speedRange.addEventListener("input", function() {
+       music.playbackRate = speedRange.value;
+       speedDisplay.innerHTML = music.playbackRate;
+     });
+     music.addEventListener("ratechange", function() {
+       speedDisplay.innerHTML = music.playbackRate;
+       speedRange.value = music.playbackRate;
+     });
+    </script>
+  </body>
+</html>
