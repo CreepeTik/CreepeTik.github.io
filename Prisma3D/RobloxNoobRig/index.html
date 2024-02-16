@@ -3,12 +3,6 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roblox Noob Rig</title>
-</head>
-<body>
-    <a href="https://creepetik.github.io/Prisma3D" id="back">< Back</a>
-    <h1>Roblox Noob Rig</h1>
-    <img src="NoobRig.jpg" alt="Preview" width="250" height="250" style="border-radius: 10px;">
-        <button class="downloadButton" onclick="downloadFile()" type="button">Download</button>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -20,7 +14,21 @@
           background-color: rgb(0,225,0);
           font-size: 20px;
         }
+        #back {
+        position: absolute;
+        left: 15px;
+        top: 15px;
+        }
+        h1 {
+          padding-top: 15px;
+        }
     </style>
+</head>
+<body>
+    <a href="https://creepetik.github.io/Prisma3D" id="back">< Back</a>
+    <h1>Roblox Noob Rig</h1>
+    <img src="NoobRig.jpg" alt="Preview" width="250" height="250" style="border-radius: 10px;">
+        <button class="downloadButton" onclick="downloadFile()" type="button">Download</button>
     <script>
         function downloadFile() {
             const fileUrl = "RobloxNoobRig.zip";
